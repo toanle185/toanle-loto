@@ -1,38 +1,96 @@
-.App {
+.main-loto {
+  font-weight: 700;
+  font-size: 16px;
+  color: #00152a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-game {
+  zoom: 120%;
+}
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.logo {
+  height: 48px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 16px 20px 16px;
+  padding-left: 10px;
+  font-family: monospace;
+  font-size: 30px;
+  color: #fff;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+  z-index: 10;
+}
+
+.anticon-menu-fold {
+  margin-right: 30px;
+}
+
+.b-history {
+  margin: 20px;
+  padding: 10px;
+  border: 1px #1890ff solid;
+  border-radius: 20px;
+  min-height: 72px;
+}
+
+.b-number {
+  height: 400px;
+  margin: 34px 20px;
+  font-size: 150px;
+  line-height: 1.8;
+}
+
+.l-lv-number {
+  height: 468px;
+}
+
+.l-lv-number li {
+  border: none !important;
+  padding-bottom: 0 !important;
+  height: 52px;
+}
+
+.b-random-number {
+  height: 468px;
+}
+
+.ran-number {
+  border: 15px #e03e00 solid;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.r-number {
+  border: 2px #e03e00 solid;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 35px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-header {
+  font-weight: 900 !important;
+  width: 106px;
 }
