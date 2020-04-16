@@ -31,6 +31,7 @@ class RandomNumber extends React.Component<gameProps, gameState> {
   public listNumber: number[] = [];
   public breakButton: boolean = false;
   public voice: any;
+  public timeOutRandom: any;
 
   componentDidMount() {
     this.createNumbers();
@@ -79,7 +80,7 @@ class RandomNumber extends React.Component<gameProps, gameState> {
     }
 
     this.breakButton = true;
-    window.setTimeout(() => {
+    this.timeOutRandom = window.setTimeout(() => {
       this.breakButton = false;
       this.randomNumber();
     }, this.props.speed);
@@ -90,6 +91,9 @@ class RandomNumber extends React.Component<gameProps, gameState> {
   }
 
   onResetGame() {
+    if (this.timeOutRandom) {
+      clearTimeout(this.timeOutRandom);
+    }
     this.breakButton = false;
     this.createNumbers();
 
@@ -102,7 +106,11 @@ class RandomNumber extends React.Component<gameProps, gameState> {
   }
 
   voiceGG(num: number) { //"Vietnamese Male"
-    this.voice.speak(num.toString(), "Vietnamese Male", {volume: 1, rate: 1});
+    let text = num.toString();
+    if (num < 11) {
+      text = "số " + text;
+    }
+    this.voice.speak(text, "Vietnamese Male", {volume: 1, rate: 1});
   }
 
   render() {
