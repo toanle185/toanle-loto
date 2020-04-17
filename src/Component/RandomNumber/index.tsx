@@ -30,18 +30,10 @@ class RandomNumber extends React.Component<gameProps, gameState> {
   public oldNumbers: Array<any> = [[], [], [], [], [], [], [], [], []];
   public listNumber: number[] = [];
   public breakButton: boolean = false;
-  public voice: any;
   public timeOutRandom: any;
 
   componentDidMount() {
     this.createNumbers();
-    const script = document.createElement("script");
-
-    script.src = "https://code.responsivevoice.org/responsivevoice.js?key=e9a32weJ";
-    script.async = true;
-    script.onload = () => this.scriptLoaded();
-
-    document.body.appendChild(script);
   }
 
   componentDidUpdate(prevProps: gameProps) {
@@ -51,10 +43,6 @@ class RandomNumber extends React.Component<gameProps, gameState> {
     if (this.props.onReset) {
       this.onResetGame();
     }
-  }
-
-  scriptLoaded() {
-    this.voice = window.responsiveVoice;
   }
 
   createNumbers() {
@@ -110,7 +98,7 @@ class RandomNumber extends React.Component<gameProps, gameState> {
     if (num < 11) {
       text = "số " + text;
     }
-    this.voice.speak(text, "Vietnamese Male", {volume: 1, rate: 1});
+    window.responsiveVoice.speak(text, "Vietnamese Male", {volume: 1, rate: 1});
   }
 
   render() {

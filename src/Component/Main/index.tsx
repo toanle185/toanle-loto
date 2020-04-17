@@ -12,6 +12,7 @@ import {
 import RandomNumber from '../RandomNumber';
 import { SliderValue } from 'antd/lib/slider';
 import Tickets from '../Tickets';
+import Ticket from '../Ticket';
 
 const { Header, Sider, Content } = Layout;
 
@@ -21,8 +22,19 @@ class Main extends React.Component {
     starting: false,
     isReset: false,
     speed: 3000,
-    tab: 1
+    tab: 1,
+    isSelectedTicket: false,
+    ticketsSelected: []
   };
+
+  componentDidMount() {
+    const script = document.createElement("script");
+
+    script.src = "https://code.responsivevoice.org/responsivevoice.js?key=e9a32weJ";
+    script.async = true;
+
+    document.body.appendChild(script);
+  }
 
   toggle = () => {
     this.setState({
@@ -54,6 +66,29 @@ class Main extends React.Component {
     }, 0);
   }
 
+  buildTickets() {
+    if (this.state.isSelectedTicket) {
+      return <React.Fragment>
+        {
+          this.state.ticketsSelected.map((ticket, i) => {
+            return (
+              <div key={i} className="ticketSelected" style={{zoom: "200%"}}>
+                <Ticket key={"tick-" + i} ticket={ticket} />
+              </div>
+            )
+          })
+        }
+      </React.Fragment>
+    } else {
+      return <Tickets onSelect={(tickets) => {this.setState({ticketsSelected: tickets})}} />
+    }
+  }
+
+
+  resetTicket = () => {
+
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -82,11 +117,11 @@ class Main extends React.Component {
                 <Space size={40}>
                   <Button className="btn-header" type="primary" shape="round" icon={<SendOutlined />} size={"large"}
                     onClick={() => this.setState({ starting: !this.state.starting })}>
-                    { this.state.starting ? "Stop" : "Start" }
+                    { this.state.starting ? "Dừng" : "Bắt Đầu" }
                   </Button>
                   <Button className="btn-header" type="primary" shape="round" icon={<RedoOutlined />} size={"large"}
                     onClick={this.resetGame}>
-                    Reset
+                    Ván Mới
                   </Button>
                 </Space>
                 <Space size={10}>
@@ -109,24 +144,20 @@ class Main extends React.Component {
                 onClick: this.toggle,
               })}
               <Space size={40}>
-                <Space size={40}>
-                  <Button className="btn-header" type="primary" shape="round" icon={<SendOutlined />} size={"large"}
-                    onClick={() => this.setState({ starting: !this.state.starting })}>
-                    { this.state.starting ? "Stop" : "Start" }
-                  </Button>
+                <Button disabled={this.state.ticketsSelected.length === 0} className="btn-header"
+                  type="primary" shape="round" icon={<SendOutlined />} size={"large"}
+                  onClick={() => this.setState({ isSelectedTicket: !this.state.isSelectedTicket })}>
+                  { this.state.isSelectedTicket ? "Chọn Lại" : "Chọn Vé" }
+                </Button>
+                  { this.state.isSelectedTicket &&
                   <Button className="btn-header" type="primary" shape="round" icon={<RedoOutlined />} size={"large"}
-                    onClick={this.resetGame}>
-                    Reset
-                  </Button>
-                </Space>
-                <Space size={10}>
-                  Tốc Độ:
-                  <Slider defaultValue={3} min={1} max={10} onChange={(value) => this.selectSpeed(value)} style={{width: 300}} />
-                </Space>
+                    onClick={this.resetTicket}>
+                    Chơi Lại
+                  </Button> }
               </Space>
             </Header>
             <Content className="site-layout-background" style={{ margin: '24px 16px', minHeight: 580 }}>
-              <Tickets />
+              { this.buildTickets() }
             </Content>
           </Layout>
         }

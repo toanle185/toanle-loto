@@ -1,7 +1,13 @@
 import React from 'react';
 import Ticket from '../Ticket';
-
-class Tickets extends React.Component {
+import { CheckOutlined } from '@ant-design/icons';
+export interface TicketsProps {
+  onSelect: (tickets: any[]) => void;
+}
+export interface TicketsState {
+  selected: any[]
+}
+class Tickets extends React.Component<TicketsProps, TicketsState> {
 
   public tickets = [
     {
@@ -246,8 +252,23 @@ class Tickets extends React.Component {
     },
   ]
 
+  state: TicketsState = {
+    selected: []
+  }
+
   componentDidMount() {
 
+  }
+
+  selectTicket(ticket: any) {
+    let tickets = this.state.selected;
+    if (tickets.includes(ticket)) {
+      tickets = tickets.filter(item => {return item !== ticket});
+    } else {
+      tickets.push(ticket);
+    }
+    this.setState({ selected: tickets });
+    this.props.onSelect(tickets);
   }
 
   render() {
@@ -256,7 +277,12 @@ class Tickets extends React.Component {
         {
           this.tickets.map((ticket) => {
             return (
-              <div className="ticketInList"><Ticket ticket={ticket} /></div>
+              <div className="ticketInList" key={ticket.key} onClick={() => {this.selectTicket(ticket)}}>
+                <Ticket ticket={ticket} />
+                { this.state.selected.includes(ticket) &&
+                  <div key={'check-' + ticket.key} className="selectedTicket"><CheckOutlined /></div>
+                }
+              </div>
             )
           })
         }

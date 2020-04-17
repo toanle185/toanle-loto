@@ -11,18 +11,33 @@ class Ticket extends React.Component<TicketProps> {
 
   }
 
+  onSelectNumber(event: React.MouseEvent<HTMLDivElement, MouseEvent>, num: number) {
+    if (num === 0) {
+      return;
+    }
+    let ele = event.currentTarget.classList;
+    if (ele.contains("activeNumber")) {
+      ele.remove("activeNumber");
+    } else {
+      ele.add("activeNumber");
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
         <div className="ticket">
-          { this.props.ticket.data.map(row => {
-            return (<Row className="ticket-row">
+          { this.props.ticket.data.map((row, i) => {
+            return (<Row className="ticket-row" key={i}>
               {
-                row.map((item) => {
-                  return (<Col className="ticket-col" style={{backgroundColor: item === 0 ? this.props.ticket.color : "#fff"}}>
-                    {item > 0 && <span className="scale-number"
-                      style={{transform: item < 10 ? "scale(.4, 1) translate(-24%, -51%)" : "scale(.4, 1) translate(-73%, -51%)"}}>{item}</span>}
-                  </Col>)
+                row.map((item, iCol) => {
+                  return (
+                    <Col key={iCol} className="ticket-col" style={{backgroundColor: item === 0 ? this.props.ticket.color : "#fff"}}
+                      onClick={(event) => this.onSelectNumber(event, item)}>
+                      {item > 0 && <span className="scale-number"
+                        style={{transform: item < 10 ? "scale(.4, 1) translate(-24%, -52%)" : "scale(.4, 1) translate(-73%, -52%)"}}>{item}</span>}
+                    </Col>
+                  )
                 })
               }
             </Row>)
