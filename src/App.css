@@ -3,6 +3,7 @@
   font-size: 16px;
   color: #424141;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 1202px;
 }
 
 /* .main-game {
@@ -125,7 +126,7 @@
   margin: 10px;
   padding: 5px;
   float: left;
-  zoom: 180%;
+  zoom: 151%;
 }
 
 .ticket {

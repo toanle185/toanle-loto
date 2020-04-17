@@ -72,7 +72,7 @@ class Main extends React.Component {
         {
           this.state.ticketsSelected.map((ticket, i) => {
             return (
-              <div key={i} className="ticketSelected" style={{zoom: "200%"}}>
+              <div key={i} className="ticketSelected">
                 <Ticket key={"tick-" + i} ticket={ticket} />
               </div>
             )
