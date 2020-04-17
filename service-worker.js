@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/toanle-loto/precache-manifest.0acac1ff1d77b4138487dc650c212597.js"
+  "/toanle-loto/precache-manifest.2206221aa2c779fd93d67196c581e7ef.js"
 );
 
 self.addEventListener('message', (event) => {
