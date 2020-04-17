@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/toanle-loto/static/css/main.ffc9ef82.chunk.css",
-    "main.js": "/toanle-loto/static/js/main.972e705b.chunk.js",
-    "main.js.map": "/toanle-loto/static/js/main.972e705b.chunk.js.map",
+    "main.css": "/toanle-loto/static/css/main.0a95e334.chunk.css",
+    "main.js": "/toanle-loto/static/js/main.316a00d0.chunk.js",
+    "main.js.map": "/toanle-loto/static/js/main.316a00d0.chunk.js.map",
     "runtime-main.js": "/toanle-loto/static/js/runtime-main.52a79ab4.js",
     "runtime-main.js.map": "/toanle-loto/static/js/runtime-main.52a79ab4.js.map",
     "static/css/2.a43b59a1.chunk.css": "/toanle-loto/static/css/2.a43b59a1.chunk.css",
     "static/js/2.8585e367.chunk.js": "/toanle-loto/static/js/2.8585e367.chunk.js",
     "static/js/2.8585e367.chunk.js.map": "/toanle-loto/static/js/2.8585e367.chunk.js.map",
     "index.html": "/toanle-loto/index.html",
-    "precache-manifest.2206221aa2c779fd93d67196c581e7ef.js": "/toanle-loto/precache-manifest.2206221aa2c779fd93d67196c581e7ef.js",
+    "precache-manifest.8354bd1a419bfbaecaf618b89ed0eb6d.js": "/toanle-loto/precache-manifest.8354bd1a419bfbaecaf618b89ed0eb6d.js",
     "service-worker.js": "/toanle-loto/service-worker.js",
     "static/css/2.a43b59a1.chunk.css.map": "/toanle-loto/static/css/2.a43b59a1.chunk.css.map",
-    "static/css/main.ffc9ef82.chunk.css.map": "/toanle-loto/static/css/main.ffc9ef82.chunk.css.map",
+    "static/css/main.0a95e334.chunk.css.map": "/toanle-loto/static/css/main.0a95e334.chunk.css.map",
     "static/js/2.8585e367.chunk.js.LICENSE.txt": "/toanle-loto/static/js/2.8585e367.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.52a79ab4.js",
     "static/css/2.a43b59a1.chunk.css",
     "static/js/2.8585e367.chunk.js",
-    "static/css/main.ffc9ef82.chunk.css",
-    "static/js/main.972e705b.chunk.js"
+    "static/css/main.0a95e334.chunk.css",
+    "static/js/main.316a00d0.chunk.js"
   ]
 }

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4df108b662a8fcd69556acbdd8859f97",
+    "revision": "dff0d40e818a24c889f90cc562419bdc",
     "url": "/toanle-loto/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/toanle-loto/static/css/2.a43b59a1.chunk.css"
   },
   {
-    "revision": "61817ef6576e64d6751a",
-    "url": "/toanle-loto/static/css/main.ffc9ef82.chunk.css"
+    "revision": "9f95c0d095485a385cc1",
+    "url": "/toanle-loto/static/css/main.0a95e334.chunk.css"
   },
   {
     "revision": "4b0668f97c70abdc9f74",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/toanle-loto/static/js/2.8585e367.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "61817ef6576e64d6751a",
-    "url": "/toanle-loto/static/js/main.972e705b.chunk.js"
+    "revision": "9f95c0d095485a385cc1",
+    "url": "/toanle-loto/static/js/main.316a00d0.chunk.js"
   },
   {
     "revision": "e33de4099bd73bb2167c",
