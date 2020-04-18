@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col, List } from 'antd';
 
 declare global {
   interface Window {
@@ -57,6 +56,9 @@ class RandomNumber extends React.Component<gameProps, gameState> {
     }
     let number = this.numbers[Math.floor(Math.random() * this.numbers.length)]
     this.numbers.splice(this.numbers.indexOf(number), 1);
+    if (this.listNumber.length >= 10) {
+      this.listNumber.shift();
+    }
     this.listNumber.push(number);
     if (number === 90) {
       this.oldNumbers[8].push(number);
@@ -104,41 +106,39 @@ class RandomNumber extends React.Component<gameProps, gameState> {
   render() {
     return (
       <React.Fragment>
-        <Row className="main-game">
-          <Col span={9} className="b-random-number">
+        <div className="main-game">
+          <ul className="b-history">
+            { this.listNumber.map((num, index) => {
+              return (
+              <li className="r-number" key={index}
+              style={{ borderColor: num > 45 ? "#005800" : "#e03e00" }}>
+                {num}
+              </li>) 
+            })}
+          </ul>
+          <div className="b-random-number">
             { this.state.randNumber > 0 &&
-              <Row className="b-number" justify="center" align="middle">
-                <span className="ran-number"
-                  style={{ borderColor: this.state.randNumber > 45 ? "#005800" : "#e03e00" }}>
+              <div className="b-number" style={{ borderColor: this.state.randNumber > 45 ? "#005800" : "#e03e00" }}>
+                <span className="ran-number">
                   {this.state.randNumber}
                 </span>
-              </Row>
+              </div>
             }
-          </Col>
-          <List className="l-lv-number" dataSource={this.oldNumbers} renderItem={items => (
-            <List.Item>
-              <Row className="b-lv-number">
-                { items.map((num: any, index: number) => {
+          </div>
+          <ul className="l-lv-number">
+            { this.oldNumbers.map((row) => {
+              return <li className="lv-number-row">
+                { row.map((num: any, index: number) => {
                   return (
-                  <Col className="r-number" key={index}
+                  <div className="r-number" key={index}
                   style={{ borderColor: num > 45 ? "#005800" : "#e03e00" }}>
                     {num}
-                  </Col>) 
+                  </div>) 
                 })}
-              </Row>
-            </List.Item>
-            )}
-          />
-        </Row>
-        <Row className="b-history">
-          { this.listNumber.map((num, index) => {
-            return (
-            <Col className="r-number" key={index}
-            style={{ margin: "5px", borderColor: num > 45 ? "#005800" : "#e03e00" }}>
-              {num}
-            </Col>) 
-          })}
-        </Row>
+              </li>
+            }) }
+          </ul>
+        </div>
       </React.Fragment>
     );
   }

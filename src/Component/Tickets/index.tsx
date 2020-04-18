@@ -1,6 +1,22 @@
 import React from 'react';
-import Ticket from '../Ticket';
 import { CheckOutlined } from '@ant-design/icons';
+import pink1 from "../../images/pink1.png";
+import pink2 from "../../images/pink2.png";
+import red1 from "../../images/red1.png";
+import red2 from "../../images/red2.png";
+import purple1 from "../../images/purple1.png";
+import purple2 from "../../images/purple2.png";
+import orange1 from "../../images/orange1.png";
+import orange2 from "../../images/orange2.png";
+import yellow1 from "../../images/yellow1.png";
+import yellow2 from "../../images/yellow2.png";
+import green1 from "../../images/green1.png";
+import green2 from "../../images/green2.png";
+import blue1 from "../../images/blue1.png";
+import blue2 from "../../images/blue2.png";
+import gre1 from "../../images/gre1.png";
+import gre2 from "../../images/gre2.png";
+
 export interface TicketsProps {
   onSelect: (tickets: any[]) => void;
 }
@@ -23,7 +39,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [4, 0, 0, 33, 41, 0, 61, 0, 83],
         [9, 0, 29, 30, 0, 0, 62, 0, 88],
         ],
-      color: "#f56d97"
+      color: "#f56d97",
+      image: pink1
     },
     {
       key: "pink2",
@@ -38,7 +55,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [2, 0, 0, 36, 47, 0, 65, 72, 0],
         [0, 11, 23, 0, 45, 51, 0, 0, 81],
         ],
-      color: "#f56d97"
+      color: "#f56d97",
+      image: pink2
     },
     {
       key: "red1",
@@ -53,7 +71,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [9, 12, 0, 37, 42, 0, 0, 0, 88],
         [0, 15, 0, 36, 0, 51, 68, 0, 90],
         ],
-      color: "#df3b36"
+      color: "#df3b36",
+      image: red1
     },
     {
       key: "red2",
@@ -68,7 +87,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [0, 0, 27, 0, 40, 57, 0, 76, 87],
         [1, 16, 0, 33, 0, 0, 65, 78, 0],
         ],
-      color: "#df3b36"
+      color: "#df3b36",
+      image: red2
     },
     {
       key: "purple1",
@@ -83,7 +103,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [6, 0, 0, 37, 40, 0, 65, 0, 82],
         [2, 0, 22, 39, 0, 0, 67, 0, 83],
         ],
-      color: "#8546a9"
+      color: "#8546a9",
+      image: purple1
     },
     {
       key: "purple2",
@@ -98,7 +119,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [9, 0, 0, 35, 46, 0, 60, 73, 0],
         [0, 10, 27, 0, 48, 59, 0, 0, 86],
         ],
-      color: "#8546a9"
+      color: "#8546a9",
+      image: purple2
     },
     {
       key: "orange1",
@@ -110,10 +132,11 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [0, 18, 0, 38, 46, 0, 63, 0, 81],
         [9, 0, 0, 0, 47, 0, 66, 79, 86],
         [4, 0, 28, 31, 0, 57, 0, 72, 0],
-        [0, 17, 0, 26, 0, 52, 64, 0, 80],
+        [0, 17, 0, 36, 0, 52, 64, 0, 80],
         [0, 19, 23, 0, 45, 0, 62, 74, 0],
         ],
-      color: "#ea7444"
+      color: "#ea7444",
+      image: orange1
     },
     {
       key: "orange2",
@@ -128,7 +151,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [7, 0, 21, 0, 41, 56, 0, 0, 87],
         [0, 11, 0, 37, 44, 0, 61, 70, 0],
         ],
-      color: "#ea7444"
+      color: "#ea7444",
+      image: orange2
     },
     {
       key: "yellow1",
@@ -143,7 +167,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [3, 0, 28, 0, 48, 53, 0, 0, 80],
         [0, 17, 0, 37, 45, 0, 63, 77, 0],
         ],
-      color: "#f2d748"
+      color: "#f2d748",
+      image: yellow1
     },
     {
       key: "yellow2",
@@ -158,7 +183,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [0, 13, 0, 33, 0, 57, 67, 0, 82],
         [0, 11, 26, 0, 44, 0, 69, 79, 0],
         ],
-      color: "#f2d748"
+      color: "#f2d748",
+      image: yellow2
     },
     {
       key: "green1",
@@ -173,7 +199,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [2, 19, 0, 32, 48, 0, 67, 0, 0],
         [0, 14, 22, 0, 0, 57, 0, 78, 90],
         ],
-      color: "#68a460"
+      color: "#68a460",
+      image: green1
     },
     {
       key: "green2",
@@ -188,7 +215,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [0, 12, 0, 36, 43, 0, 64, 0, 82],
         [3, 0, 26, 39, 0, 58, 66, 0, 0],
         ],
-      color: "#68a460"
+      color: "#68a460",
+      image: green2
     },
     {
       key: "blue1",
@@ -203,7 +231,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [4, 10, 0, 30, 49, 0, 66, 0, 0],
         [0, 15, 25, 0, 0, 51, 0, 76, 81],
         ],
-      color: "#0289c9"
+      color: "#0289c9",
+      image: blue1
     },
     {
       key: "blue2",
@@ -218,7 +247,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [0, 17, 0, 38, 44, 0, 69, 0, 88],
         [2, 0, 27, 37, 0, 55, 67, 0, 0],
         ],
-      color: "#0289c9"
+      color: "#0289c9",
+      image: blue2
     },
     {
       key: "gre1",
@@ -233,7 +263,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [8, 12, 0, 34, 45, 0, 0, 0, 87],
         [0, 19, 0, 39, 0, 55, 60, 0, 89],
         ],
-      color: "#92a937"
+      color: "#92a937",
+      image: gre1
     },
     {
       key: "gre2",
@@ -248,7 +279,8 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         [0, 0, 21, 0, 43, 52, 0, 75, 84],
         [6, 18, 0, 32, 0, 0, 69, 70, 0],
         ],
-      color: "#92a937"
+      color: "#92a937",
+      image: gre2
     },
   ]
 
@@ -277,12 +309,12 @@ class Tickets extends React.Component<TicketsProps, TicketsState> {
         {
           this.tickets.map((ticket) => {
             return (
-              <div className="ticketInList" key={ticket.key} onClick={() => {this.selectTicket(ticket)}}>
-                <Ticket ticket={ticket} />
-                { this.state.selected.includes(ticket) &&
-                  <div key={'check-' + ticket.key} className="selectedTicket"><CheckOutlined /></div>
-                }
-              </div>
+                <div className="ticketInList" key={ticket.key} onClick={() => {this.selectTicket(ticket)}}>
+                  <img className="ticket-image" src={ticket.image} alt=""/>
+                  { this.state.selected.includes(ticket) &&
+                    <div key={'check-' + ticket.key} className="selectedTicket"><CheckOutlined /></div>
+                  }
+                </div>
             )
           })
         }

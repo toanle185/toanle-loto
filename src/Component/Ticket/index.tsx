@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-
 export interface TicketProps {
   ticket: { data: number[][], color: string }
 }
@@ -35,7 +34,7 @@ class Ticket extends React.Component<TicketProps> {
                     <Col key={iCol} className="ticket-col" style={{backgroundColor: item === 0 ? this.props.ticket.color : "#fff"}}
                       onClick={(event) => this.onSelectNumber(event, item)}>
                       {item > 0 && <span className="scale-number"
-                        style={{transform: item < 10 ? "scale(.4, 1) translate(-24%, -52%)" : "scale(.4, 1) translate(-73%, -52%)"}}>{item}</span>}
+                        style={{transform: item < 10 ? "scale(.4, 1) translate(-26%, -20%)" : ""}}>{item}</span>}
                     </Col>
                   )
                 })

@@ -1,94 +1,126 @@
 .main-loto {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 4vw;
   color: #424141;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: 1202px;
+  background-color: #fff !important;
+  width: 100vw;
+  /* height: 100vh; */
+  text-align: center;
 }
 
-/* .main-game {
-  zoom: 120%;
-} */
-
-.trigger {
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color 0.3s;
+.first-block {
+  width: 100vw;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
 }
-
-.trigger:hover {
-  color: #1890ff;
-}
-
 .logo {
-  height: 48px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px 16px 20px 16px;
-  padding-left: 10px;
+  text-align: center;
+  height: 7%;
+  background: #e7e7e7;
+  margin: 5vw;
   font-family: monospace;
-  font-size: 30px;
-  color: #fff;
+  font-size: 8vw;
+  color: #000;
   line-height: 1.6;
   white-space: nowrap;
+  position: relative;
 }
 
-.site-layout .site-layout-background {
-  background: #fff;
-  z-index: 10;
+.logo-image {
+  height: 80vw;
 }
 
-.anticon-menu-fold {
-  margin-right: 30px;
+.logo-image >img {
+  width: 80%;
+  height: 80%;
+  transform: translate(0, 25%);
 }
 
-.b-history {
-  margin: 20px;
-  padding: 10px;
-  border: 1px #1890ff solid;
-  border-radius: 20px;
-  min-height: 72px;
+.btn-first-block {
+  height: 75vw;
+}
+.btn-first-block >button {
+  height: 12vw;
+  padding: 2vw 7vw;
+  font-size: 4vw;
+  margin-top: 16vw;
+  border-radius: 6vw;
+}
+.header-read .btn-header {
+  margin: 2vw;
+  height: 10vw;
+  padding: 0vw 7vw;
+  font-size: 4vw;
+  border-radius: 6vw;
+}
+.speed {
+  display: flex;
+  margin: 0 3vw;
+}
+.speed >span {
+  text-align: center;
+  margin-right: 1vw;
+  width: 16vw;
+}
+
+.main-game {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.b-random-number {
+  height: 44.5vw;
+  margin-top: 2vw;
 }
 
 .b-number {
-  height: 400px;
-  margin: 34px 20px;
-  font-size: 150px;
-  line-height: 1.8;
-}
-
-.l-lv-number {
-  height: 468px;
-}
-
-.l-lv-number li {
-  border: none !important;
-  padding-bottom: 0 !important;
-  height: 52px;
-}
-
-.b-random-number {
-  height: 468px;
+  font-size: 26.5vw;
+  width: 44.5vw;
+  height: 44.5vw;
+  border: 2vw #e03e00 solid;
+  border-radius: 50%;
+  margin: auto;
 }
 
 .ran-number {
-  border: 15px #e03e00 solid;
-  border-radius: 50%;
-  height: 300px;
-  width: 300px;
-  text-align: center;
+  position: absolute;
+  transform: translate(-50%, -2%);
 }
 
+.b-history {
+  border: 0.3vw #1890ff solid;
+  border-radius: 6vw;
+  height: 12.2vw;
+  margin: 1vw 0.7vw;
+  padding: 1vw;
+  display: flex;
+  list-style: none;
+}
+
+
+.l-lv-number {
+  list-style: none;
+  padding: 4vw 2vw;
+  margin: 0;
+  height: 95.5vw;
+}
+
+.l-lv-number li {
+  display: flex;
+  height: calc(100% / 9);
+}
+
+
 .r-number {
-  border: 2px #e03e00 solid;
+  border: 0.3vw #e03e00 solid;
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  margin-right: 10px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 35px;
+  height: 9vw;
+  width: 9vw;
+  line-height: 8.5vw;
+  margin: 0.3vw;
 }
 
 .btn-header {
@@ -96,46 +128,61 @@
 }
 
 .ticketsPage {
+  width: 100vw;
+  height: 163.6vw;
+  padding: 8vw 0;
+}
+
+.ticket-image {
   width: 100%;
   height: 100%;
-  margin: 5px;
-  display: inline-block;
 }
 
 .ticketInList {
-  width: 300px;
-  height: 450px;
-  border: 1px #585858 solid;
-  margin: 10px;
-  padding: 5px;
-  float: left;
   cursor: pointer;
-  transition: all ease;
-}
-.ticketInList:hover {
-  transform: scale(1.01);
-}
-.ticketInList .ticket {
-  pointer-events: none;
+  width: 23vw;
+  float: left;
+  margin: 1vw 1vw;
 }
 
 .ticketSelected {
-  width: 300px;
-  height: 450px;
-  border: 1px #585858 solid;
-  margin: 10px;
-  padding: 5px;
+  width: 94vw;
+  height: 152vw;
   float: left;
-  zoom: 151%;
+  margin: 6vw 3vw;
+  padding: 1.5vw;
+  border: 0.4vw #585858 solid;
+}
+
+.ticketSelected-50 {
+  width: 47vw;
+  height: 76vw;
+  float: left;
+  margin: 3vw 1.5vw;
+  padding: 0.75vw;
+  border: 0.2vw #585858 solid;
+}
+.ticketSelected-50 .ticket {
+  border: 0.2vw #585858 solid;
+  border-right: unset;
+  border-bottom: unset;
+}
+
+.ticketSelected-50 .ticket-col {
+  border: 0.2vw #585858 solid;
+  border-left: unset;
+  border-top: unset;
+}
+
+.ticketSelected-50 .scale-number {
+  font-size: 8.5vw;
 }
 
 .ticket {
   width: 100%;
   height: 100%;
   text-align: center;
-  font-size: 12px;
-  font-weight: unset;
-  border: 1px #585858 solid;
+  border: 0.4vw #585858 solid;
   border-right: unset;
   border-bottom: unset;
 }
@@ -147,20 +194,19 @@
 
 .ticket-col {
   width: calc(100% / 9);
-  border: 1px #585858 solid;
+  border: 0.4vw #585858 solid;
   border-left: unset;
   border-top: unset;
   cursor: pointer;
 }
 
 .scale-number {
-  font-size: 58px;
+  font-size: 17vw;
   color: #585858;
   pointer-events: none;
   display: block;
   position: absolute;
-  top: 50%;
-  transform: scale(.4, 1) translate(-73%, -52%);
+  transform: scale(.4, 1) translate(-76%, -20%);
 }
 
 .selectedTicket {

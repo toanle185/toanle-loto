@@ -1,20 +1,14 @@
 import React from 'react';
-import { Layout, Menu, Button, Space, Slider } from 'antd';
+import { Button, Slider } from 'antd';
 import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
   SendOutlined,
   RedoOutlined,
-  SolutionOutlined,
-  DollarCircleOutlined,
-  SoundOutlined
 } from '@ant-design/icons';
 import RandomNumber from '../RandomNumber';
 import { SliderValue } from 'antd/lib/slider';
 import Tickets from '../Tickets';
 import Ticket from '../Ticket';
-
-const { Header, Sider, Content } = Layout;
+import SelectType from '../SelectType';
 
 class Main extends React.Component {
   state = {
@@ -22,9 +16,10 @@ class Main extends React.Component {
     starting: false,
     isReset: false,
     speed: 3000,
-    tab: 1,
+    tab: 0,
     isSelectedTicket: false,
-    ticketsSelected: []
+    ticketsSelected: [],
+    resetTicket: false
   };
 
   componentDidMount() {
@@ -51,7 +46,7 @@ class Main extends React.Component {
 
   selectSpeed = (value: SliderValue) => {
     this.setState({
-      speed: Number(value) * 1000
+      speed: (6 - Number(value)) * 1000
     });
   }
 
@@ -69,10 +64,10 @@ class Main extends React.Component {
   buildTickets() {
     if (this.state.isSelectedTicket) {
       return <React.Fragment>
-        {
+        { !this.state.resetTicket &&
           this.state.ticketsSelected.map((ticket, i) => {
             return (
-              <div key={i} className="ticketSelected">
+              <div key={i} className={this.state.ticketsSelected.length > 1 ? "ticketSelected-50" : "ticketSelected"}>
                 <Ticket key={"tick-" + i} ticket={ticket} />
               </div>
             )
@@ -84,84 +79,73 @@ class Main extends React.Component {
     }
   }
 
+  re_selectTicket() {
+    if (this.state.isSelectedTicket) {
+      this.setState({
+        ticketsSelected: []
+      });
+    }
+    this.setState({
+      isSelectedTicket: !this.state.isSelectedTicket
+    });
+  }
 
-  resetTicket = () => {
-
+  resetTicket() {
+    this.setState({
+      resetTicket: true
+    });
+    setTimeout(() => {
+      this.setState({
+        resetTicket: false
+      });
+    }, 0);
   }
 
   render() {
     return (
       <React.Fragment>
-        <Layout className="main-loto">
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <div className="logo"><DollarCircleOutlined style={{marginRight: 24}} />Lô Tô</div>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1" onClick={() => this.setTabChange(1)}>
-              <SoundOutlined />
-              <span>Đọc Số</span>
-            </Menu.Item>
-            <Menu.Item key="2" onClick={() => this.setTabChange(2)}>
-              <SolutionOutlined />
-              <span>Dò Số</span>
-            </Menu.Item>
-          </Menu>
-        </Sider>
+        <div className="main-loto">
+        { this.state.tab === 0 &&
+          <SelectType setTabChange={(tab) => this.setTabChange(tab)} />
+        }
         { this.state.tab === 1 &&
-          <Layout className="site-layout">
-            <Header className="site-layout-background" style={{ padding: 0 }}>
-              {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                className: 'trigger',
-                onClick: this.toggle,
-              })}
-              <Space size={40}>
-                <Space size={40}>
-                  <Button className="btn-header" type="primary" shape="round" icon={<SendOutlined />} size={"large"}
-                    onClick={() => this.setState({ starting: !this.state.starting })}>
-                    { this.state.starting ? "Dừng" : "Bắt Đầu" }
-                  </Button>
-                  <Button className="btn-header" type="primary" shape="round" icon={<RedoOutlined />} size={"large"}
-                    onClick={this.resetGame}>
-                    Ván Mới
-                  </Button>
-                </Space>
-                <Space size={10}>
-                  Tốc Độ:
-                  <Slider defaultValue={3} min={1} max={10} onChange={(value) => this.selectSpeed(value)} style={{width: 300}} />
-                </Space>
-              </Space>
-            </Header>
-            <Content className="site-layout-background" style={{ margin: '24px 16px', minHeight: 580 }}>
+          <React.Fragment>
+            <div className="header-read">
+              <Button className="btn-header" type="primary" shape="round" icon={<SendOutlined />}
+                onClick={() => this.setState({ starting: !this.state.starting })}>
+                { this.state.starting ? "Dừng" : "Bắt Đầu" }
+              </Button>
+              <Button className="btn-header" type="primary" shape="round" icon={<RedoOutlined />}
+                onClick={this.resetGame}>
+                Ván Mới
+              </Button>
+              <div className="speed">
+                <span>Tốc Độ:</span>
+                <Slider defaultValue={3} min={1} max={5} onChange={(value) => this.selectSpeed(value)} style={{width: "78%"}} />
+              </div>
               <RandomNumber isStart={this.state.starting} onReset={this.state.isReset}
                 speed={this.state.speed} resetFinish={() => {this.setState({isReset: false})}} />
-            </Content>
-          </Layout>
+            </div>
+          </React.Fragment>
         }
         { this.state.tab === 2 &&
-          <Layout className="site-layout">
-            <Header className="site-layout-background" style={{ padding: 0 }}>
-              {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                className: 'trigger',
-                onClick: this.toggle,
-              })}
-              <Space size={40}>
-                <Button disabled={this.state.ticketsSelected.length === 0} className="btn-header"
-                  type="primary" shape="round" icon={<SendOutlined />} size={"large"}
-                  onClick={() => this.setState({ isSelectedTicket: !this.state.isSelectedTicket })}>
-                  { this.state.isSelectedTicket ? "Chọn Lại" : "Chọn Vé" }
-                </Button>
-                  { this.state.isSelectedTicket &&
-                  <Button className="btn-header" type="primary" shape="round" icon={<RedoOutlined />} size={"large"}
-                    onClick={this.resetTicket}>
-                    Chơi Lại
-                  </Button> }
-              </Space>
-            </Header>
-            <Content className="site-layout-background" style={{ margin: '24px 16px', minHeight: 580 }}>
-              { this.buildTickets() }
-            </Content>
-          </Layout>
+          <React.Fragment>
+            <div className="header-read">
+              <Button disabled={this.state.ticketsSelected.length === 0} className="btn-header"
+                type="primary" shape="round" icon={<SendOutlined />}
+                onClick={() => this.re_selectTicket()}>
+                { this.state.isSelectedTicket ? "Chọn Lại" : "Chọn Vé" }
+              </Button>
+              { this.state.isSelectedTicket &&
+              <Button className="btn-header" type="primary" shape="round" icon={<RedoOutlined />}
+                onClick={() => this.resetTicket()}>
+                Chơi Lại
+              </Button> }
+            </div>
+            { this.buildTickets() }
+          </React.Fragment>
         }
-      </Layout>
+      </div>
       </React.Fragment>
     );
   }
