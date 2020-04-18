@@ -1,25 +1,42 @@
 {
   "files": {
-    "main.css": "/toanle-loto/static/css/main.0a95e334.chunk.css",
-    "main.js": "/toanle-loto/static/js/main.316a00d0.chunk.js",
-    "main.js.map": "/toanle-loto/static/js/main.316a00d0.chunk.js.map",
+    "main.css": "/toanle-loto/static/css/main.2199bf91.chunk.css",
+    "main.js": "/toanle-loto/static/js/main.04d44b45.chunk.js",
+    "main.js.map": "/toanle-loto/static/js/main.04d44b45.chunk.js.map",
     "runtime-main.js": "/toanle-loto/static/js/runtime-main.52a79ab4.js",
     "runtime-main.js.map": "/toanle-loto/static/js/runtime-main.52a79ab4.js.map",
     "static/css/2.a43b59a1.chunk.css": "/toanle-loto/static/css/2.a43b59a1.chunk.css",
-    "static/js/2.8585e367.chunk.js": "/toanle-loto/static/js/2.8585e367.chunk.js",
-    "static/js/2.8585e367.chunk.js.map": "/toanle-loto/static/js/2.8585e367.chunk.js.map",
+    "static/js/2.0a62b36a.chunk.js": "/toanle-loto/static/js/2.0a62b36a.chunk.js",
+    "static/js/2.0a62b36a.chunk.js.map": "/toanle-loto/static/js/2.0a62b36a.chunk.js.map",
     "index.html": "/toanle-loto/index.html",
-    "precache-manifest.8354bd1a419bfbaecaf618b89ed0eb6d.js": "/toanle-loto/precache-manifest.8354bd1a419bfbaecaf618b89ed0eb6d.js",
+    "precache-manifest.e382c4f2665e705281806a4c08b757b7.js": "/toanle-loto/precache-manifest.e382c4f2665e705281806a4c08b757b7.js",
     "service-worker.js": "/toanle-loto/service-worker.js",
     "static/css/2.a43b59a1.chunk.css.map": "/toanle-loto/static/css/2.a43b59a1.chunk.css.map",
-    "static/css/main.0a95e334.chunk.css.map": "/toanle-loto/static/css/main.0a95e334.chunk.css.map",
-    "static/js/2.8585e367.chunk.js.LICENSE.txt": "/toanle-loto/static/js/2.8585e367.chunk.js.LICENSE.txt"
+    "static/css/main.2199bf91.chunk.css.map": "/toanle-loto/static/css/main.2199bf91.chunk.css.map",
+    "static/js/2.0a62b36a.chunk.js.LICENSE.txt": "/toanle-loto/static/js/2.0a62b36a.chunk.js.LICENSE.txt",
+    "static/media/blue1.png": "/toanle-loto/static/media/blue1.6ec9ae53.png",
+    "static/media/blue2.png": "/toanle-loto/static/media/blue2.14e54b4f.png",
+    "static/media/gre1.png": "/toanle-loto/static/media/gre1.7676b45b.png",
+    "static/media/gre2.png": "/toanle-loto/static/media/gre2.e4c001d7.png",
+    "static/media/green1.png": "/toanle-loto/static/media/green1.6082b61e.png",
+    "static/media/green2.png": "/toanle-loto/static/media/green2.778c8318.png",
+    "static/media/logo.jpg": "/toanle-loto/static/media/logo.ac19c6d0.jpg",
+    "static/media/orange1.png": "/toanle-loto/static/media/orange1.af4e5f2f.png",
+    "static/media/orange2.png": "/toanle-loto/static/media/orange2.677d66b2.png",
+    "static/media/pink1.png": "/toanle-loto/static/media/pink1.fb6435f4.png",
+    "static/media/pink2.png": "/toanle-loto/static/media/pink2.7b4aa577.png",
+    "static/media/purple1.png": "/toanle-loto/static/media/purple1.443fb8aa.png",
+    "static/media/purple2.png": "/toanle-loto/static/media/purple2.bac18898.png",
+    "static/media/red1.png": "/toanle-loto/static/media/red1.1c15152d.png",
+    "static/media/red2.png": "/toanle-loto/static/media/red2.025514ed.png",
+    "static/media/yellow1.png": "/toanle-loto/static/media/yellow1.1bffe3c0.png",
+    "static/media/yellow2.png": "/toanle-loto/static/media/yellow2.a2e705cd.png"
   },
   "entrypoints": [
     "static/js/runtime-main.52a79ab4.js",
     "static/css/2.a43b59a1.chunk.css",
-    "static/js/2.8585e367.chunk.js",
-    "static/css/main.0a95e334.chunk.css",
-    "static/js/main.316a00d0.chunk.js"
+    "static/js/2.0a62b36a.chunk.js",
+    "static/css/main.2199bf91.chunk.css",
+    "static/js/main.04d44b45.chunk.js"
   ]
 }
